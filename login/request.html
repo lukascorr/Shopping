@@ -1,0 +1,48 @@
+<div class="register-box" style="margin-top: 20px;width: 60%;">
+
+  <div class="register-box-body">
+
+    <p class="register-box-msg" style="font-weight: bolder;">
+    Solicíta una cuenta de usuario</p>
+
+    <span class="glyphicon glyphicon-envelope"></span>  
+    Enviaremos un mensaje al administrador para que te otorge una contraseña de usuario.<hr>
+
+    <form action="../admin/altas.php" method="GET">
+
+      <div class="form-group">
+        <label>DNI</label>
+        <input type="text" class="form-control" name="dni" placeholder="Introduce tu dni" required maxlength="8" autocomplete="off" style="width: 80%;">
+      </div>
+
+      <div class="form-group has-feedback">
+        <label>Nombre</label>
+        <input type="tex" class="form-control" name="nombre" placeholder="Introduce tu nombre" required autocomplete="off" style="width: 80%;">
+      </div>
+
+      <div class="form-group has-feedback">
+        <label>Apellido</label>
+        <input type="text" class="form-control" name="apellido" placeholder="Introduce tu apellido" required autocomplete="off" style="width: 80%;">
+      </div>
+
+      <div class="form-group has-feedback">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Introduce tu email" required autocomplete="off" style="width: 80%;">
+      </div>
+
+      <strong>Usuario</strong>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input type="text" class="form-control" name="usuario" placeholder="Introduce un nombre de usuario" required aria-describedby="basic-addon1" autocomplete="off" style="width: 78%;">
+      </div><br>
+
+      <div class="form-group has-feedback">
+        <label>Mensaje</label>
+        <input type="text" class="form-control" name="mensaje" placeholder="Escribe un mensaje" style="height: 40px;" autocomplete="off">
+      </div>
+
+      <button style="width: 30%;border-radius: 3px;" type="submit" class="btn btn-primary btn-block btn-flat" name='notification' value='true'>Enviar</button>
+
+    </form>
+  </div>
+</div> 

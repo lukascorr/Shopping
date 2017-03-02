@@ -1,0 +1,28 @@
+
+<div class="login-box">
+  <div class="login-box-body">
+
+    <p class="login-box-msg">Ingrese sus datos de Acceso</p>
+
+    <form action="index.php?id=session.php" method="post">
+
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="user" placeholder="Usuario, Email o Teléfono" required>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" name="password" placeholder="Contraseña">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+            
+      <button style="width: 40%;border-radius: 3px;" type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+
+      <div style="text-align: center;">
+        <a href="index.php?id=recovery.html"> ¿Olvidaste tu cuenta?</a>
+        <span role="presentation" aria-hidden="true"> · </span>
+        <a href="index.php?id=request.html" rel="nofollow" title="Pídele un usuario al administrador">Solicitar Usuario</a>
+      </div>
+    </form>
+  </div>
+</div>
