@@ -51,7 +51,7 @@
     <label">Contraseña</label>
     <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
   </div>
-  <button type="submit" name='newuser' value="true" class="btn-success btn">Enviar</button>
+  <button type="submit" name='newuser' value="true" class="bg-green-gradient btn">Enviar</button>
 </form>
               
 

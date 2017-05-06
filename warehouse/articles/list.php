@@ -10,6 +10,8 @@
             <h3 class="box-title">Artículos</h3>
           <div class="box-tools pull-right box-title">
 
+          <?php if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { ?>
+
             Proveedor:<select onchange="location = this.value"> 
             <option></option>
             <?php
@@ -22,7 +24,8 @@
                     </option>
             <?php } ?>
             </select>
-
+            <? } ?>
+            
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>       
           </div>
         </div>
@@ -61,12 +64,12 @@
 
                       <!--Agregar al carrito -->
                       <button class="btn btn-primary" style="padding: 1px 5px 0px 5px; margin-right: 15px;" type="submit" title='Agregar al carrito' name='add_to_cart'> 
-                        <span class='glyphicon glyphicon-shopping-cart'></span>
+                        <span class='fa fa-shopping-cart'></span>
                       </button> <?php } ?>
 
                       <!--Precio -->
                       <span class="label bg-green"> 
-                        <?php echo "<span class='glyphicon glyphicon-usd'></span>".number_format($reg['precio_art']);?>
+                        <?php echo "<span class='fa fa-usd'></span>".number_format($reg['precio_art']);?>
                       </span>
                     </div>
                    </div>
@@ -83,14 +86,14 @@
                  if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') {?>
                   
                   <div class="alert alert-warning col-md-7 col-sm-8" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Atención!</strong> No dispones de articulos en stock.
                 </div>
                 
                 <?php } else{?>
 
                   <div class="alert alert-info col-md-7 col-sm-10" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Disculpe!</strong> Por el momento, no disponemos de stock.
                 </div>
 
@@ -116,7 +119,7 @@
                     <div class="cajita-footer">
                       <!--Precio -->
                       <span class="label bg-green"> 
-                        <?php echo "<span class='glyphicon glyphicon-usd'></span>".number_format($art_pro['precio_art']);?>
+                        <?php echo "<span class='fa fa-usd'></span>".number_format($art_pro['precio_art']);?>
                       </span>
                     </div>
                    </div>
@@ -149,12 +152,12 @@
 
                       <!--Agregar al carrito -->
                       <button class="btn btn-primary" style="padding: 1px 5px 0px 5px; margin-right: 15px;" type="submit" title='Agregar al carrito' name='add_to_cart'> 
-                        <span class='glyphicon glyphicon-shopping-cart'></span>
+                        <span class='fa fa-shopping-cart'></span>
                       </button> <?php } ?>
 
                       <!--Precio -->
                       <span class="label bg-green"> 
-                        <?php echo "<span class='glyphicon glyphicon-usd'></span>".number_format($reg['precio_art']);?>
+                        <?php echo "<span class='fa fa-usd'></span>".number_format($reg['precio_art']);?>
                       </span>
                     </div>
                    </div>
@@ -171,14 +174,14 @@
                  if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') {?>
                   
                   <div class="alert alert-warning col-md-7 col-sm-8" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Atención!</strong> No dispones de articulos en stock.
                 </div>
                 
                 <?php } else{?>
 
                   <div class="alert alert-info col-md-7 col-sm-10" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Disculpe!</strong> Por el momento, no disponemos de stock.
                 </div>
 

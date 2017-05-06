@@ -49,8 +49,8 @@
 
                             <?php if($write['mensaje']!=''){ echo "<a href='admin/notifications/read.php?notifications=true&dni=".$write['dni']."' target='frame-mensaje'>
 
-                            <button class='btn btn-success pull-right' type='button' style='margin-top:-4px; padding: 3px 5px 3px 5px; display:block;'>
-                              <span class='badge'>1</span> <span class='glyphicon glyphicon-envelope'></span>
+                            <button class='btn bg-green-gradient pull-right' type='button' style='margin-top:-4px; padding: 3px 5px 3px 5px; display:block;'>
+                              <span class='badge'>1</span> <span class='fa fa-envelope'></span>
                               <btn class='descarto3'> Mensaje</btn>
                             </button></a>"."<p>";}
                         } ?>
@@ -68,7 +68,7 @@
 
                 <?php } else { ?>
 
-                    <h5><span class="glyphicon glyphicon-ok-sign"></span> 
+                    <h5><span class="fa fa-ok-sign"></span> 
                     <strong> No hay notificaciones.</strong></h5>
 
                     <?php } ?>

@@ -38,16 +38,16 @@
 
                 echo '<div class="alert alert-info" style="width:70%; padding-top: 0px; padding-bottom: 0px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="glyphicon glyphicon-ok"></span>
+                <span class="fa fa-ok"></span>
                   El artículo se agregó al stock.</h5>
                </div>';
               }  
 
               $articles=$link->query("SELECT * FROM deposito where cantidad>=1");
 
-              $depositovacio=$articles->fetch_array(MYSQLI_ASSOC);
+              $depositolleno=$articles->fetch_array(MYSQLI_ASSOC);
 
-              if($depositovacio==true){
+              if($depositolleno==true){
 
               $deposito=$link->query("SELECT * FROM deposito INNER JOIN proveedores ON deposito.idproveedor_dep = proveedores.idproveedor WHERE deposito.cantidad>=1");?>
 
@@ -66,7 +66,7 @@
                           <td class='descarto3'><?php echo $write['nombre'];?>
 
                           <td><a href='index.php?id=warehouse/articles/new.php&codigo=<? echo $write['codigo_p'];?>' title='Agregar al stock'><button class='btn btn-success' type='button'>
-                          <span class='glyphicon glyphicon-log-in'></span></button></a>
+                          <span class='fa fa-log-in'></span></button></a>
 
                           </td></tr>
                          <?php }?>
@@ -76,8 +76,8 @@
 
                 <?php } else{ ?>
 
-                <div class="alert alert-info col-md-6 col-sm-7" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                <div class="alert bg-light-blue-gradient col-md-6 col-sm-7" role="alert" style="margin-top:20px;">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> El depósito se encuentra vacío.</strong>  
                 </div>
                 <?php } ?>

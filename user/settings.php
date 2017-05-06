@@ -39,16 +39,13 @@ else{ $variable="config-profile.php";}
 
     <link rel="stylesheet" href="../static/css/font-awesome.css">
     <link rel="stylesheet" href="../static/css/AdminLTE.css">
-    <link rel="stylesheet" href="../static/css/skin.css">
-    <link rel="shortcut icon" href="../static/img/favicon.ico">
+    <link rel="icon" href="../static/img/favicon.ico">
     <link rel="stylesheet" href="../static/css/bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    
-    <script src="../static/js/jQuery-2.1.4.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/app.min.js"></script>
 
-    
+    <script src="../static/js/jquery-3.2.1.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/app.js"></script>
+
   </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -82,7 +79,7 @@ else{ $variable="config-profile.php";}
                     <input type="text" class="form-control" placeholder="Buscar" onkeyup="document.getElementById('buscar').disabled=(this.value!='') ? false: true" name="results">
                     <span class="input-group-btn">
                       <button class="btn btn-default" type="submit" id="buscar" disabled="disabled">
-                        <span class="glyphicon glyphicon-search"></span>
+                        <span class="fa fa-search"></span>
                       </button>
                     </span>
                   </div>
@@ -93,7 +90,7 @@ else{ $variable="config-profile.php";}
             <!--Icono de notificaciones -->
             <li class="dropdown notifications-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-bell" title="Notificaciones">
+                <span class="fa fa-bell" title="Notificaciones">
                 </span>
               </a>
               <ul class="dropdown-menu">
@@ -125,11 +122,11 @@ else{ $variable="config-profile.php";}
                 <!-- Opciones Perfil-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="../index.php?id=user/profile.php" class="btn btn-default btn-flat">Ver Perfil</a>
+                    <a href="../index.php?id=user/profile.php" class="btn btn-default">Ver Perfil</a>
                   </div>
 
                   <div class="pull-right">
-                    <a href="../login/logout.php" class="btn btn-default" title="Cerrar Sesión"><span class="glyphicon glyphicon-off"></span></a>
+                    <a href="../login/logout.php" class="btn btn-default" title="Cerrar Sesión"><span class="fa fa-power-off"></span></a>
                   </div>
                 </li>
               </ul>
@@ -145,16 +142,16 @@ else{ $variable="config-profile.php";}
 
       <ul class="sidebar-menu">
             
-        <li class="treeview active">
+        <li class="treeview">
           <a href="settings.php">
-            <i class="glyphicon glyphicon-user"></i>
+            <i class="fa fa-user"></i>
             <span>Perfil</span>
           </a>
         </li>
             
         <li class="treeview">
           <a href="settings.php?id=config-account.php">
-            <i class="glyphicon glyphicon-lock"></i>
+            <i class="fa fa-lock"></i>
             <span>Cuenta</span>
           </a>
         </li>
@@ -162,7 +159,7 @@ else{ $variable="config-profile.php";}
         <li>
           <a href="#">
             <i class="fa fa-plus-square"></i> <span>Ayuda</span>
-            <small class="label pull-right bg-red">PDF</small>
+            <small class="label pull-right bg-red-gradient">PDF</small>
           </a>
         </li>
                        
@@ -177,7 +174,9 @@ else{ $variable="config-profile.php";}
                    
   <footer class="main-footer">
     <strong>Copyright &copy; 2016.</strong> All rights reserved. 
-    <a href="https://github.com/LukasCorr" target="_blank"><img src="../static/img/github.png" style="height: 14px" class="github-phone"></a>
+    <a href="https://github.com/LukasCorr" target="_blank">
+      <span class="fa fa-github"></span>
+    </a>
   </footer>
 
 </body>

@@ -18,8 +18,8 @@
 
                 <form  action="purchases/altas.php" method="POST">
                 <?php if ($row['xproveedores']>=1){?>
-                <button type="submit" class="btn-success btn" style='margin-top:-6px; padding: 3px 10px;'> 
-                	<span class="glyphicon glyphicon-usd"></span>
+                <button type="submit" class="bg-green-gradient btn" style='margin-top:-6px; padding: 3px 10px;'> 
+                	<span class="fa fa-usd"></span>
                   <strong>Comprar</strong>
                 </button><?php } ?>
                 <button class="btn btn-box-tool" data-widget="collapse">
@@ -36,7 +36,7 @@
 
               <div class="alert alert-info" style="width:80%; padding-top: 0px; padding-bottom: 0px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="glyphicon glyphicon-ok"></span>
+                <span class="fa fa-ok"></span>
                   La compra se efectuó con éxito.<a href="index.php?id=purchases/deposit.php">Ver depósito</a></h5>
               </div>
 
@@ -74,7 +74,7 @@
                   <strong>Precio</strong>
                   <div class="input-group col-md-7 col-sm-8 col-xs-8">
                     <div class="input-group-addon">
-                      <span class="glyphicon glyphicon-usd"></span>
+                      <span class="fa fa-usd"></span>
                     </div>
                     <input type="number" class="form-control" name="precio" required autocomplete="off" min=1>
                     <div class="input-group-addon">.00</div>
@@ -97,7 +97,7 @@
                 <?php } else {?>
 
                 <div class="alert alert-warning" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Atención!</strong> 
                   Aun no dispones de un proveedor. <a href='index.php?id=admin/provides/newprovide.php' class="alert-link">Ingresa un nuevo proveedor.
                 </div>

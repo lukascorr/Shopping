@@ -13,7 +13,7 @@ $total=0;
       <div class="col-md-12">
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title"><a href="index.php?id=sales/reports.php"><span class="glyphicon glyphicon-check"></span></a> Ventas realizadas</h3>
+            <h3 class="box-title"><a href="index.php?id=sales/reports.php"><span class="fa fa-check"></span></a> Ventas realizadas</h3>
             <div class="box-tools pull-right box-title">
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
@@ -23,7 +23,6 @@ $total=0;
             <div class="row">
               <div class="col-md-12 col-xs-12">
 
-                <div class='registros'>
                   <div class="pull-right">
                     <label>Buscar:</label>
                     <select onchange="location = this.value"> 
@@ -121,7 +120,6 @@ $total=0;
                       } ?>
                   </table>
                   <?php } ?>
-                </div>
               </div>
             </div>               
   		    </div>

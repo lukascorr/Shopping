@@ -13,7 +13,7 @@ if (isset($_GET['id'])){
   
 else{ $variable="login.html";} 
 
-$title='Bienvenido | Shopping'; ?>
+$title='Shopping | Iniciar Sesión'; ?>
  
 <!DOCTYPE html>
 <html>
@@ -27,12 +27,10 @@ $title='Bienvenido | Shopping'; ?>
 
   <link rel="stylesheet" href="../static/css/font-awesome.css">
   <link rel="stylesheet" href="../static/css/AdminLTE.css">
-  <link rel="stylesheet" href="../static/css/skin.css">
   <link rel="shortcut icon" href="../static/img/favicon.ico">
   <link rel="stylesheet" href="../static/css/bootstrap.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 
-  <script src="../static/js/jQuery-2.1.4.min.js"></script>
+  <script src="../static/js/jquery-3.2.1.js"></script>
   <script src="../static/js/bootstrap.min.js"></script>
   <script src="../static/js/app.js"></script>
 
@@ -44,9 +42,9 @@ $title='Bienvenido | Shopping'; ?>
     <a href="../" class="logo">
       <span class="logo-lg"><b>Shopping</b></span>
     </a>
+    <nav class="navbar" role="navigation">
 
-    <nav class="navbar navbar-static-top" role="navigation">
-    </nav>
+        </nav>
   </header>
 
 

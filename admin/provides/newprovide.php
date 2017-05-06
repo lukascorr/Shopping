@@ -49,7 +49,7 @@
                     placeholder="Ingrese dirección" required autocomplete="off">
                   </div>
 
-                  <button type="submit" name='newprovide' value="true" class="btn-success btn">Enviar</button>
+                  <button type="submit" name='newprovide' value="true" class="bg-green-gradient btn">Enviar</button>
                 </form>
 
             </div>               

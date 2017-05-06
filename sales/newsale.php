@@ -54,7 +54,7 @@ $date=strftime('%Y/%m/%d');?>
                         <td class='descarto3'>".$write['stock']?></td>
                         <td style='width:17%;'><input type='number' class='form-control' name='cantidad' id='cantidad' autocomplete='off' min='0' max="<?php echo $write['stock'];?>"></td>
 
-                          <td style='width:5%;'><button class='btn btn-success pull-right' type='submit' title='Agregar al carrito' name='add_to_cart'><span class='glyphicon glyphicon-shopping-cart'></span></button></td></tr>
+                          <td style='width:5%;'><button class='btn bg-green-gradient pull-right' type='submit' title='Agregar al carrito' name='add_to_cart'><span class='fa fa-shopping-cart'></span></button></td></tr>
 
                           <input type='hidden' name='nombre' value='<?php echo $write["nombre_art"]; ?>'>
                           <input type='hidden' name='descripcion' value='<?php echo $write["descripcion"];?>'>
@@ -68,7 +68,7 @@ $date=strftime('%Y/%m/%d');?>
                   <?php } else{ ?>
 
                  <div class="alert alert-info col-md-7 col-sm-10" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Disculpe!</strong> Por el momento, no disponemos de stock.
                 </div>
                 <?php } ?>            

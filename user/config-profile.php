@@ -67,7 +67,7 @@
                   <input type="text" class="form-control" name="localidad" value="<?php echo $reg['localidad'];?>">
                 </div>
               </div>
-                <button type="submit" name='profile' value='true' class="btn-success btn">Aceptar</button>
+                <button type="submit" name='profile' value='true' class="bg-green-gradient btn">Aceptar</button>
               </form>
             </div>
           </div>

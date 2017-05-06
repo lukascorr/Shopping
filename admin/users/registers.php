@@ -24,17 +24,17 @@
 
             <?php if (isset($_GET['deleted'])) {
 
-                echo '<div class="alert alert-info" style="width:70%; padding-top: 0px; padding-bottom: 0px;">
+                echo '<div class="alert bg-red-gradient" style="width:70%; padding-top: 0px; padding-bottom: 0px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="glyphicon glyphicon-ok"></span>
+                <span class="fa fa-ok"></span>
                   El usuario se eliminó con éxito.</h5>
                </div>';
             } 
             elseif(isset($_GET['successful'])){
 
-              echo '<div class="alert alert-info" style="width:70%; padding-top: 0px; padding-bottom: 0px;">
+              echo '<div class="alert bg-green-gradient" style="width:70%; padding-top: 0px; padding-bottom: 0px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="glyphicon glyphicon-ok"></span>
+                <span class="fa fa-ok"></span>
                   El usuario se agregó con éxito.</h5>
                </div>';
 
@@ -42,7 +42,7 @@
 
             <div class="box-tools pull-right box-title">
               <a href="index.php?id=admin/users/newuser.php">
-                <button class="btn btn-default"> <span class="glyphicon glyphicon-user"></span><btn class='descarto3'> Crear Usuario</btn></button>
+                <button class="btn btn-default"> <span class="fa fa-user"></span><btn class='descarto3'> Crear Usuario</btn></button>
               </a>
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>          
             </div>
@@ -83,10 +83,10 @@
 
 
                           "<td class='descarto3'>".$write['estado']."</td>
-                          <td><a href='admin/deletes.php?deleteuser=true&dni=".$write['dni']."' title='Eliminar'><button class='btn btn-danger' type='button'>
-                          <span class='glyphicon glyphicon-trash'></span></button></a>
+                          <td><a href='admin/deletes.php?deleteuser=true&dni=".$write['dni']."' title='Eliminar'><button class='btn bg-red-gradient' type='button'>
+                          <span class='fa fa-trash'></span></button></a>
 
-                          <a href='#' title='Enviale un mensaje a ".$write['nombre'].".'><button class='btn btn-info' type='button'><span class='glyphicon glyphicon-envelope'></span></button></a>
+                          <a href='#' title='Enviale un mensaje a ".$write['nombre'].".'><button class='btn bg-light-blue-gradient' type='button'><span class='fa fa-envelope'></span></button></a>
 
                           </td></tr>";
                          }?>
@@ -96,8 +96,8 @@
 
                 <?php } else{ ?>
 
-                <div class="alert alert-info col-md-6 col-sm-7" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                <div class="alert bg-light-blue-gradient col-md-6 col-sm-7" role="alert" style="margin-top:20px;">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Aún no dispones de usuarios.</strong>  
                 </div>
                 <?php } ?>

@@ -23,7 +23,7 @@
 
             <div class="box-tools pull-right box-title">
               <a href="index.php?id=admin/provides/newprovide.php">
-                <button class="btn btn-default"> <span class="glyphicon glyphicon-calendar"></span><btn class='descarto3'>  Nuevo Proveedor</btn></button>
+                <button class="btn btn-default"> <span class="fa fa-calendar"></span><btn class='descarto3'>  Nuevo Proveedor</btn></button>
               </a>
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -36,18 +36,18 @@
 
               <?php if (isset($_GET['deleted'])) {?>
 
-              <div class="alert alert-info" style="width:80%; padding-top: 0px; padding-bottom: 0px;">
+              <div class="alert bg-red-gradient" style="width:80%; padding-top: 0px; padding-bottom: 0px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="glyphicon glyphicon-ok"></span>
+                <span class="fa fa-ok"></span>
                   El proveedor se eliminó con éxito.</h5>
               </div>
                 
                 <?php }     
                 elseif(isset($_GET['successful'])){
 
-                echo '<div class="alert alert-info" style="width:70%; padding-top: 0px; padding-bottom: 0px;">
+                echo '<div class="alert bg-green-gradient" style="width:70%; padding-top: 0px; padding-bottom: 0px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="glyphicon glyphicon-ok"></span>
+                <span class="fa fa-ok"></span>
                   El proveedor se agregó con éxito.</h5>
                </div>';   }
 
@@ -83,16 +83,16 @@
 
                       <!--Boton eliminar proveedor -->
                       <td><a href='admin/deletes.php?deleteprovide=true&idproveedor=<?php echo $write['idproveedor']?>'>
-                      <button class='btn btn-danger' type='button'>
-                      <span class='glyphicon glyphicon-trash'></span>
+                      <button class='btn bg-red-gradient' type='button'>
+                      <span class='fa fa-trash'></span>
                       </button></a>
 
-                      <a href='index.php?id=admin/provides/modification.php&idproveedor=<?php echo $write['idproveedor']?>'><button class='btn btn-info' type='button'><span class='glyphicon glyphicon-edit'></span></button></a></td></tr>
+                      <a href='index.php?id=admin/provides/modification.php&idproveedor=<?php echo $write['idproveedor']?>'><button class='btn bg-light-blue-gradient' type='button'><span class='fa fa-edit'></span></button></a></td></tr>
                         
                       <?php } } else{ ?>
 
-                      <div class="alert alert-warning col-md-6 col-sm-6" role="alert" style="margin-top:20px;">
-                      <span class="glyphicon glyphicon-exclamation-sign">
+                      <div class="alert bg-orange-gradient col-md-6 col-sm-6" role="alert" style="margin-top:20px;">
+                      <span class="fa fa-exclamation-sign">
                       </span><strong> Atención!</strong> 
                       No dispones de ningún proveedor.
                       </div>

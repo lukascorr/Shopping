@@ -5,7 +5,6 @@ if(isset($_POST["add_to_cart"]))
   if(isset($_SESSION["cart"])) 
     {
     $item_array_id = array_column($_SESSION["cart"], "item_id"); 
-  
     
       if(!in_array($_GET["articulo"], $item_array_id)) 
         {
@@ -68,7 +67,7 @@ if(isset($_GET["sold"])){
       <div class="col-md-12">
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title">Carrito de compras</h3><span class="glyphicon glyphicon-shopping-cart"></span>
+            <h3 class="box-title">Carrito de compras</h3><span class="fa fa-shopping-cart"></span>
 
             <div class="box-tools pull-right box-title">
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -79,13 +78,12 @@ if(isset($_GET["sold"])){
             <div class="row">
 	           	<div class="col-md-12">
                           
-                <div class='registros'>
                 
                <? if(isset($_GET["sold"])){?>
 
-                <div class="alert alert-success" style="width:80%; padding-top: 0px; padding-bottom: 0px;">
+                <div class="alert bg-green-gradient" style="width:80%;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="glyphicon glyphicon-ok"></span>
+                <span class="fa fa-ok"></span>
                   La venta se realizó con éxito. <a href="index.php?id=sales/newsale.php">Realizar nueva venta</a>
                   </h5>
                </div>
@@ -112,7 +110,7 @@ if(isset($_GET["sold"])){
                     <td>$<? echo number_format($values["item_quantity"] * $values["item_price"]); ?></td>
 
                     <td><a href='index.php?id=sales/cart.php&delete&articulo=<?php echo $values["item_id"]; ?>' title='Eliminar'><button class='btn btn-danger' type='button'>
-                    <span class='glyphicon glyphicon-trash'></span></button></a></td></tr>
+                    <span class='fa fa-trash'></span></button></a></td></tr>
   
                     <?php
                     $cont=$cont+1;
@@ -122,20 +120,19 @@ if(isset($_GET["sold"])){
                     <tr style="background-color: #ECF0F5; font-weight: bolder; border:none;"><td>Total</td><td class='descarto3'></td><td class='descarto3'></td><td></td>
                     <td>$ <?php echo number_format($total); ?></td><td></td></tr>
                   </table>
-                </div>
 
                 <a href="index.php?id=sales/newsale.php">
-              <button class="btn btn-primary pull-left" type="  button" title="Nueva Venta"><span class="glyphicon glyphicon-arrow-left">
+              <button class="btn btn-primary pull-left" type="  button" title="Nueva Venta"><span class="fa fa-arrow-left">
                 </span></button></a>
                       
                 <a href="index.php?id=sales/cart.php&sold">
 
-                <button style='margin-left: 20px;' class="btn btn-success" type="button"><span class="glyphicon glyphicon-check"></span> Efectuar Venta</button></a>
+                <button style='margin-left: 20px;' class="btn bg-green-gradient" type="button"><span class="fa fa-check"></span> Efectuar Venta</button></a>
 
                     <?php } else{?>
                     
-                    <div class="alert alert-info col-md-8 col-sm-8" role="alert" style="margin-top:10px;">
-                    <span class="glyphicon glyphicon-transfer"></span> 
+                    <div class="alert bg-light-blue-gradient col-md-8 col-sm-8" role="alert" style="margin-top:10px;">
+                    <span class="fa fa-transfer"></span> 
                     <strong> No hay compras realizadas</strong>
                     </div>
                     <? } ?>
@@ -149,5 +146,5 @@ if(isset($_GET["sold"])){
   </section>
 </div>
 
-<?php $_SESSION['total']=$total;
-      $_SESSION['contador']=$cont; ?>
+<?php $_SESSION['total']=isset($total);
+      $_SESSION['contador']=isset($cont); ?>

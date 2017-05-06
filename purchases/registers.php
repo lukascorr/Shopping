@@ -10,7 +10,7 @@
       <div class="col-md-12">
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title"><a href="index.php?id=purchases/registers.php"><span class="glyphicon glyphicon-check"></span></a> Compras realizadas</h3>
+            <h3 class="box-title"><a href="index.php?id=purchases/registers.php"><span class="fa fa-check"></span></a> Compras realizadas</h3>
             <div class="box-tools pull-right box-title">
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>

@@ -16,27 +16,20 @@ include 'static/db/conection.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
-    
-      <title>Shopping</title>
-   
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    
+    <meta charset="utf-8" http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Shopping</title>
     <link rel="stylesheet" href="static/css/font-awesome.css">
     <link rel="stylesheet" href="static/css/AdminLTE.css">
-    <link rel="stylesheet" href="static/css/skin.css">
     <link rel="icon" href="static/img/favicon.ico">
     <link rel="stylesheet" href="static/css/bootstrap.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-
-    <script src="static/js/jQuery-2.1.4.min.js"></script>
+    <script src="static/js/jquery-3.2.1.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/app.js"></script>
 
   </head>
     <body class="hold-transition skin-blue sidebar-mini">
-
+        <div class="wrapper">
       <?php
 //-------------------------------------------------------------
       
@@ -89,49 +82,44 @@ include 'static/db/conection.php';
       else {?>
 
       <header class="main-header">
-
-        <div class="navbar-fixed-top" role="navigation">     
+  
           <a href="./" class="logo">    
             <span class="logo-mini"><b>SH</b>P</span>     
             <span class="logo-lg"><b>Shopping</b></span>
           </a>
-        </div>
 
-        <nav class="navbar navbar-fixed-top" role="navigation">
+        <nav class="navbar" role="navigation">
       
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Navegación</span>
           </a>
-
-
-          <div class="navbar-custom-menu">
        
-            <ul>
+            <ul class="nav navbar-nav navbar-right">
 
                 <!--Cuadro de Busqueda -->
-              <li style="margin-top: 10px;" class="nav navbar-nav pull-left">
+              <li style="margin-top: 10px;width: 45%;">
                   
                 <form action="index.php?id=search.php" method="POST">
                   <div class="input-group" id="busqueda">
-                    <input type="text" class="form-control" placeholder="Buscar" onkeyup="document.getElementById('buscar').disabled=(this.value!='') ? false: true" name="results" autocomplete="off" style="width: 10px;">
+                    <input type="text" class="form-control" placeholder="Buscar artículos" onkeyup="document.getElementById('buscar').disabled=(this.value!='') ? false: true" name="results" autocomplete="off" style="width: 100%;">
                     <span class="input-group-btn">
                       <button class="btn btn-default" type="submit" id="buscar" disabled="disabled">
-                        <span class="glyphicon glyphicon-search"></span>
+                        <span class="fa fa-search"></span>
                       </button>
                     </span>
                   </div>
                 </form>  
               </li>
 
-              <li style="display: inline;" class="navbar-brand">
+              <li style="margin-top: -5px;">
                   <a href="login/index.php?id=request.html" >
-                  <button type="button" class="btn btn-lg btn-xs btn-primary" title="Pídele un usuario al administrador">Solicitar Usuario</button>
+                  <button type="button" class="btn btn-primary" title="Pídele un usuario al administrador">Solicitar Usuario</button>
                 </a>
               </li>
 
-              <li style="display: inline;" class="navbar-brand">
+              <li style="margin-top: -5px;">
                 <a href="login">
-                  <button type="button" class="btn btn-lg btn-xs btn-primary">Iniciar Sesión</button>
+                  <button type="button" class="btn btn-primary">Iniciar Sesión</button>
                 </a>
               </li>
 
@@ -169,7 +157,7 @@ include 'static/db/conection.php';
             </li>
 
             <li>
-              <a href="index.php?id=developers/about.php">
+              <a href="index.php?id=static/about.php">
                 <i class="fa fa-info-circle"></i> <span>Quienes Somos?</span>
                 <small class="label pull-right bg-yellow">IT</small>
               </a>
@@ -183,7 +171,7 @@ include 'static/db/conection.php';
       <!-- Notificacion (Cuenta solicitada) -->
       <?php if (isset($_GET['message'])) {
 
-           echo "<script> alert('Solicitado!!');
+           echo "<script> alert('Se ha solicitado una cuenta de usuario! En breve sera comunicado a través de su cuenta email.');
                 </script>";
           } 
        
@@ -195,8 +183,8 @@ include 'static/db/conection.php';
        </div>
 
         <footer class="main-footer">
-         <strong>Copyright &copy; 2016.</strong> All rights reserved. 
-          <a href="https://github.com/LukasCorr" target="_blank"><img src="static/img/github.png" style="height: 14px" class="github-phone"></a>
+         <strong>TSolutions &copy; 2016.</strong> All rights reserved.
+          <a href="https://github.com/LukasCorr/Shopping" target="_blank"><span class="fa fa-github"></span></a>
         </footer>
 </body>
 </html>

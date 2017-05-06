@@ -23,7 +23,8 @@
             <h3 class="box-title">Nuevo Artículo</h3> 
              <div class="box-tools pull-right box-title">
           <form  action="warehouse/altas.php" method="POST" enctype="multipart/form-data">
-          <?php if (($row1['xcategorias'] and $row2['xproveedores'])>=1){?>
+
+          <?php if (($row1['xcategorias'] and $row2['xproveedores'])>=1){?><!-- Si existen proveedores se podra comprar-->
 
               <button type="submit" name='newarticle' value="true" class="btn-success btn" style='margin-top:-8px; padding: 3px 10px;'>Agregar</button>
           <?php } ?>
@@ -118,7 +119,7 @@
                 </div>
 
 
-                <?php  }
+                <?php  }//Si no existen proveedores mostrar
                 elseif($row2['xproveedores']==0){?>
 
                 <div class="alert alert-warning" role="alert" style="margin-top:20px;">

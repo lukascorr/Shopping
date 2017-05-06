@@ -23,8 +23,8 @@ echo '<meta http-equiv="refresh" content="0; url=./">'; } ?>
 
                   <!--Boton para eliminar usuario -->
                   <a href='admin/deletes.php?deleteuser=true&dni="<?php echo $reg['dni'];?>"'>
-                    <button class='btn btn-danger' type='button'>
-                      <span class='glyphicon glyphicon-trash'></span>
+                    <button class='btn bg-red-gradient' type='button'>
+                      <span class='fa fa-trash'></span>
                       <btn class='descarto3'> Eliminar</btn>
                     </button>
                   </a>
@@ -32,7 +32,7 @@ echo '<meta http-equiv="refresh" content="0; url=./">'; } ?>
                       if (isset($_SESSION['id']) && $_SESSION['id']!='38808595') { ?>
                 
                 <a href="user/settings.php">
-                  <button class="btn btn-default"> <span class="glyphicon glyphicon-cog"></span> Editar</button>
+                  <button class="btn btn-default"> <span class="fa fa-cog"></span> Editar</button>
                 </a>
               <?php } ?>
 

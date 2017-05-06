@@ -12,7 +12,7 @@
             <h3 class="box-title">Nueva Categoria</h3> 
             <div class="box-tools pull-right box-title">
                 <form  action="warehouse/altas.php" method="POST" enctype="multipart/form-data">
-                <button type="submit" name='newcategory' value="true" class="btn-success btn">Agregar</button>
+                <button type="submit" name='newcategory' value="true" class="bg-green-gradient btn">Agregar</button>
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
               </div>

@@ -20,12 +20,12 @@
                 <div style="text-align: center;">
                   <img class="img-circle" src="static/img/about.jpg" width="140" height="140">
                   <h2>Lucas Correa</h2>
-                  <span class="glyphicon glyphicon-briefcase"></span>   Estudiante de Analisis y Programación de Sistemas en IES-9012 San Rafael en Informatica <br>
+                  <span class="fa fa-briefcase"></span> Analista y Programador de Sistemas<br>
 
-                  <span class="glyphicon glyphicon-map-marker"></span> San Rafael (Mendoza-Argentina).
+                  <span class="fa fa-map-marker"></span> San Rafael (Mendoza-Argentina).
                   
                   <br><br>
-                  <a class="btn btn-default" href="mailto:correa97lukas@hotmail.com" role="button" target="_blank">  <span class="glyphicon glyphicon-envelope"></span> Contactar</a>
+                  <a class="btn btn-default" href="mailto:correa97lukas@hotmail.com" role="button" target="_blank">  <span class="fa fa-envelope"></span> Contactar</a>
                   
                 </div>
               </div>

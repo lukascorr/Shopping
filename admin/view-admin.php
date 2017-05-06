@@ -1,37 +1,32 @@
 <!-- Navbar -->
 <header class="main-header">
-     
-        <div class="navbar-fixed-top" role="navigation">     
+        
           <a href="./" class="logo">    
             <span class="logo-mini"><b>SH</b>P</span>     
             <span class="logo-lg"><b>Shopping</b></span>
           </a>
-        </div>
 
-        <nav class="navbar navbar-fixed-top" role="navigation">
+
+        <nav class="navbar" role="navigation">
       
     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-      <span class="sr-only">Navegación</span>
+      <span class="sr-only"></span>
     </a>
 
-    <div class="navbar-custom-menu">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right ">
 
         <!--Cuadro de Busqueda -->
-        <li style="margin-top: 10px;">
-          <div style="width: auto;" class="col-md-12">
-
+        <li style="margin-top: 10px;width: 75%;">
             <form action="index.php?id=search.php" method="POST">
               <div class="input-group" id="busqueda">
-                <input type="text" class="form-control" placeholder="Buscar" onkeyup="document.getElementById('buscar').disabled=(this.value!='') ? false: true" name="results" autocomplete="off">
+                <input type="text" class="form-control" placeholder="Buscar artículos" onkeyup="document.getElementById('buscar').disabled=(this.value!='') ? false: true" name="results" autocomplete="off">
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="submit" id="buscar" disabled="disabled">
-                    <span class="glyphicon glyphicon-search"></span>
+                    <span class="fa fa-search"></span>
                   </button>
                 </span>
               </div>
             </form>  
-          </div>
         </li>
 
         <!--icono notificaciones -->
@@ -44,7 +39,7 @@
             $row=mysqli_fetch_array($count);
             $xnotific=$row['xnotific'];?>                     
 
-            <span class="glyphicon glyphicon-bell" title="<?php 
+            <i class="fa fa-bell" title="<?php 
 
               if($xnotific==1){ echo 'Tienes '.$xnotific.' notificación';}
 
@@ -53,9 +48,9 @@
               else{ echo 'No tienes notificaciones';}?>">
   
               <?php
-              if ($xnotific>=1){ echo '<small class="badge bg-red notification">'.$xnotific.'</small>';} ?>
+              if ($xnotific>=1){ echo '<span class="label label-danger">'.$xnotific.'</span>';} ?>
   
-            </span>
+            </i>
           </a>
                 
           <ul class="dropdown-menu">
@@ -110,14 +105,14 @@
 
               <div class="pull-right">
                 <a href="login/logout.php" class="btn btn-default" title="Cerrar Sesión">
-                  <span class="glyphicon glyphicon-off"></span>
+                  <span class="fa fa-power-off"></span>
                 </a>
               </div>
             </li>
           </ul>
         </li>
       </ul>
-    </div>
+
   </nav>
 </header>
 
@@ -170,7 +165,7 @@
 
       <li class="treeview">
         <a href="#">
-          <i class="glyphicon glyphicon-shopping-cart"></i>
+          <i class="fa fa-shopping-cart"></i>
           <span>Ventas</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
@@ -219,7 +214,7 @@
       </li>
       
       <li>
-        <a href="index.php?id=developers/about.php">
+        <a href="index.php?id=static/about.php">
           <i class="fa fa-info-circle"></i> <span>Quienes Somos?</span>
           <small class="label pull-right bg-yellow">IT</small>
         </a>

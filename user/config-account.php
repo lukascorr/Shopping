@@ -37,7 +37,7 @@
                 <input type="password" name="password2" class="form-control" placeholder="Vuelva a ingresar su nueva contraseña">
               </div>
 
-              <button type="submit" name='account' value='true' class="btn-git">Aceptar</button>
+              <button type="submit" name='account' value='true' class="btn-default btn">Aceptar</button>
 
             </div>
             </form>

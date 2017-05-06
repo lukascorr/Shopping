@@ -1,30 +1,30 @@
 <!--Navbar -->
 <header class="main-header">
- <div class="navbar-fixed-top" role="navigation">     
+  
   <a href="./" class="logo">    
     <span class="logo-mini"><b>SH</b>P</span>     
     <span class="logo-lg"><b>Shopping</b></span>
   </a>
-</div>
+
  
-<nav class="navbar navbar-fixed-top" role="navigation">           
+<nav class="navbar" role="navigation">  
+
     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
       <span class="sr-only">Navegación</span>
     </a>
 
-    <div class="navbar-custom-menu">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
 
         <!--Cuadro de Busqueda -->
-        <li style="margin-top: 10px;">
+        <li style="margin-top: 10px; width: 75%;">
           <div class="col-xs-12">
 
             <form action="index.php?id=search.php" method="POST">
               <div class="input-group" id="busqueda">
-                <input type="text" class="form-control" placeholder="Buscar" onkeyup="document.getElementById('buscar').disabled=(this.value!='') ? false: true" name="results" autocomplete="off">
+                <input type="text" class="form-control" placeholder="Buscar artículos" onkeyup="document.getElementById('buscar').disabled=(this.value!='') ? false: true" name="results" autocomplete="off">
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="submit" id="buscar" disabled="disabled">
-                    <span class="glyphicon glyphicon-search"></span>
+                    <span class="fa fa-search"></span>
                   </button>
                 </span>
               </div>
@@ -36,7 +36,7 @@
         <!--icono notificaciones -->
         <li class="dropdown notifications-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span class="glyphicon glyphicon-bell" title="Notificaciones"></span>
+            <span class="fa fa-bell" title="Notificaciones"></span>
           </a>
 
           <ul class="dropdown-menu">
@@ -73,7 +73,7 @@
 
               <div class="pull-right">
                 <a href="login/logout.php" class="btn btn-default" title="Cerrar Sesión">
-                  <span class="glyphicon glyphicon-off"></span>
+                  <span class="fa fa-power-off"></span>
                 </a>
               </div>
             </li>
@@ -132,9 +132,9 @@
           <span>Carrito</span>
                 
           <?php if(isset($_SESSION['total'])>0){?>
-          <small class="label pull-right bg-green" 
+          <small class="label pull-right bg-green-gradient" 
             title="Hay <?php echo $_SESSION['contador'];?> compras pendientes."> 
-            <span class='glyphicon glyphicon-usd'></span>
+            <span class='fa fa-usd'></span>
             <?php echo $_SESSION['total']."
           </small>"; }?>
         </a>
@@ -143,14 +143,14 @@
       <li>
         <a href="#">
           <i class="fa fa-plus-square"></i> <span>Ayuda</span>
-          <small class="label pull-right bg-red">PDF</small>
+          <small class="label pull-right bg-red-gradient">PDF</small>
         </a>
       </li>
   
       <li>
-        <a href="index.php?id=developers/about.php">
+        <a href="index.php?id=static/about.php">
           <i class="fa fa-info-circle"></i> <span>Quienes Somos?</span>
-          <small class="label pull-right bg-yellow">IT</small>
+          <small class="label pull-right bg-yellow-gradient">IT</small>
         </a>
       </li>                      
     </ul>

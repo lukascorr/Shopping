@@ -14,7 +14,7 @@
             if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { ?>
 
             <a href="index.php?id=warehouse/categories/new.php">
-              <button class="btn btn-facebook"> <span class="glyphicon glyphicon-plus-sign"></span><btn class='descarto3'> Agrega una Categoria</btn></button>
+              <button class="btn bg-green-gradient"> <span class="fa fa-plus-circle"></span><btn class='descarto3'>  Agrega una Categoria</btn></button>
             </a>
             <? } ?>
 
@@ -63,14 +63,14 @@
                  if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') {?>
                   
                   <div class="alert alert-warning col-md-7 col-sm-8" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Atención!</strong> No dispones de Categorias.
                 </div>
                 
                 <?php } else{?>
 
                   <div class="alert alert-info col-md-7 col-sm-10" role="alert" style="margin-top:20px;">
-                  <span class="glyphicon glyphicon-exclamation-sign">
+                  <span class="fa fa-exclamation-sign">
                   </span><strong> Disculpe!</strong> Por el momento, no disponemos categorias.
                 </div>
 

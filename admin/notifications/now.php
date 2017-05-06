@@ -29,7 +29,7 @@
 
               <?php if($row['xnotific']>0){?>
               <a href="admin/deletes.php?deletenotifications=true">
-              <button class="btn btn-default"> <span class='glyphicon glyphicon-trash'></span><btn class='descarto3'> Eliminar</btn></button>
+              <button class="btn btn-default"> <span class='fa fa-trash'></span><btn class='descarto3'> Eliminar</btn></button>
               </a><? } ?>
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -65,10 +65,10 @@
 
                           </td><td class='descarto3'><?php echo $write['tipo']."</td>"?><?php if($write['mensaje']!=''){ echo        "<td><a href='admin/notifications/read.php?notifications=true&dni=".$write['dni']."' target='frame-mensaje' title='".$write['nombre']." "."te ha enviado un mensaje.'>
 
-                          <button class='btn btn-success' type='button'><span class='badge'>1</span> <span class='glyphicon glyphicon-envelope'></span><btn class='descarto2 descarto3'> Mensaje</btn></button></a>";} 
+                          <button class='btn bg-green-gradient' type='button'><span class='badge'>1</span> <span class='fa fa-envelope'></span><btn class='descarto2 descarto3'> Mensaje</btn></button></a>";} 
 
                           if($write['dni']!=0){ echo "<a href='#' title='Agregar usuario'>
-                          <button class='btn btn-primary' type='button'><span class='glyphicon glyphicon-check'><span class='glyphicon glyphicon-user'></span></span></button></a>";}?>
+                          <button class='btn btn-primary' type='button'><span class='fa fa-check'><span class='fa fa-user'></span></span></button></a>";}?>
                           </td></tr>
                        <?php } ?>
 
@@ -84,7 +84,7 @@
 
                 <?php } else { ?>
 
-                  <h5><span class="glyphicon glyphicon-ok-sign"></span> 
+                  <h5><span class="fa fa-ok-sign"></span> 
                     <strong> No hay notificaciones.</strong></h5>
 
                     <?php } ?>
