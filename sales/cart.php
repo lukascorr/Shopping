@@ -52,7 +52,7 @@ if(isset($_GET["sold"])){
 
       $total=$values['item_quantity'] * $values['item_price'];
 
-      $compra=$link->query("INSERT INTO ventas (fecha_ven,hora,total,cantidad,precio,dni_v,idarticulo_ven) VALUES ('$date','$time','$total','$values[item_quantity]','$values[item_price]','$_SESSION[id]','$values[item_id]')");
+      $compra=$link->query("INSERT INTO ventas (fecha_ven,hora,total,cantidad,precio,dni_v,idarticulo_ven) VALUES ('$date','$time','$total','$values[item_quantity]','$values[item_price]','$reg[dni]','$values[item_id]')");
 
         unset($_SESSION["cart"][$keys]);
     }
@@ -81,9 +81,9 @@ if(isset($_GET["sold"])){
                 
                <? if(isset($_GET["sold"])){?>
 
-                <div class="alert bg-green-gradient" style="width:80%;">
+                <div class="alert bg-green-gradient" style="width:80%;font-size: 12px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="fa fa-ok"></span>
+                <i class="fa fa-check-circle"></i>
                   La venta se realizó con éxito. <a href="index.php?id=sales/newsale.php">Realizar nueva venta</a>
                   </h5>
                </div>
@@ -114,6 +114,7 @@ if(isset($_GET["sold"])){
   
                     <?php
                     $cont=$cont+1;
+
                     $total = $total + ($values["item_quantity"] * $values["item_price"]);
                     }  }  ?>
 
@@ -136,7 +137,6 @@ if(isset($_GET["sold"])){
                     <strong> No hay compras realizadas</strong>
                     </div>
                     <? } ?>
-
               </div>
             </div>               
   		    </div>
@@ -146,5 +146,6 @@ if(isset($_GET["sold"])){
   </section>
 </div>
 
-<?php $_SESSION['total']=isset($total);
-      $_SESSION['contador']=isset($cont); ?>
+<?php  $_SESSION['total']=isset($total);
+        $_SESSION['contador']=isset($cont);
+        ?>

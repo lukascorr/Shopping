@@ -131,12 +131,12 @@
           <i class="fa fa-shopping-cart"></i>
           <span>Carrito</span>
                 
-          <?php if(isset($_SESSION['total'])>0){?>
+          <?php /*if(isset($_SESSION['contador'])>0){?>
           <small class="label pull-right bg-green-gradient" 
             title="Hay <?php echo $_SESSION['contador'];?> compras pendientes."> 
             <span class='fa fa-usd'></span>
             <?php echo $_SESSION['total']."
-          </small>"; }?>
+          </small>"; }  */?>
         </a>
       </li>
                        

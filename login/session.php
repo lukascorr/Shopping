@@ -11,11 +11,11 @@ include '../static/db/conection.php';
  
   if($row["password"] == $password and $row['usuario'] == $user or $row["password"] == $password and $row['email'] == $user or $row["password"] == $password and $row['telefono'] == $user){
 
-	    $_SESSION['id'] = $row["dni"];
+	    $_SESSION['user'] = $row["usuario"];
       $_SESSION['start'] = time();
       $_SESSION['expire'] = $_SESSION['start'] + ( 60 * 60);
 
-      $sql =mysqli_query($link,"UPDATE usuarios SET estado='Activo' WHERE dni=$_SESSION[id]");
+      $sql =mysqli_query($link,"UPDATE usuarios SET estado='Activo' WHERE usuario=$_SESSION[user]");
 
 mysqli_close($link);
 header("Location: ../"); }

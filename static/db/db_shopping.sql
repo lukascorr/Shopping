@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-02-2017 a las 20:53:06
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 7.0.6
+-- Tiempo de generación: 24-06-2017 a las 12:28:38
+-- Versión del servidor: 10.1.22-MariaDB
+-- Versión de PHP: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -92,7 +94,7 @@ INSERT INTO `categorias` (`idcategoria`, `tipo`, `descripcion_cat`, `imagen`, `c
 (11, 'Hogar', 'Muebles,sillones,etc.', 'warehouse/categories/img/muebles 1.jpg', 1),
 (12, 'Cocina', 'Articulos, Ollas, Etc.', 'warehouse/categories/img/cocina.jpg', 1),
 (13, 'ElectrodomÃ©sticos', 'Heladeras, Lavarropas,etc.', 'warehouse/categories/img/electrodomesticos.jpg', 1),
-(15, 'TecnologÃ­as', 'Computacion, Videojuegos, Etc.', 'warehouse/categories/img/tecnologias.jpg', 1),
+(15, 'Tecnologias', 'Computacion, Videojuegos, Etc.', 'warehouse/categories/img/tecnologias.jpg', 1),
 (16, 'Indumentaria', 'Ropa, Calzados, Etc.', 'warehouse/categories/img/ropa.jpg', 1),
 (17, 'Higiene', 'Articulos De Limpieza', 'warehouse/categories/img/higiene.jpg', 1);
 
@@ -111,14 +113,6 @@ CREATE TABLE `compras` (
   `codigo_c` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `compras`
---
-
-INSERT INTO `compras` (`idcompra`, `precio_c`, `cantidad_c`, `fecha`, `total`, `codigo_c`) VALUES
-(1, 40, 5, '2016-11-07', 200, 1),
-(2, 9, 5, '2016-11-07', 45, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -133,14 +127,6 @@ CREATE TABLE `deposito` (
   `precio` smallint(6) NOT NULL,
   `idproveedor_dep` smallint(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `deposito`
---
-
-INSERT INTO `deposito` (`codigo_p`, `producto`, `descripcion`, `cantidad`, `precio`, `idproveedor_dep`) VALUES
-(1, 'Lampazo', 'Grande', 0, 40, 10),
-(2, 'Hk', 'Iooihoh', 5, 9, 11);
 
 -- --------------------------------------------------------
 
@@ -159,19 +145,6 @@ CREATE TABLE `notifications` (
   `tipo` varchar(50) NOT NULL,
   `condicion` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `notifications`
---
-
-INSERT INTO `notifications` (`dni`, `nombre`, `apellido`, `usuario`, `email`, `fecha`, `mensaje`, `tipo`, `condicion`) VALUES
-(0, 'Sistema', '', '', '', '2016-11-21', 'Sr. Administrador: se le comunica que el producto Lampazo Grande se encuentra en estado de reposicion, con 5 cantidades.', 'sistema', 0),
-(0, 'Sistema', '', '', '', '2016-11-21', 'Sr. Administrador: se le comunica que el producto Lampazo Grande se encuentra en estado de reposicion, con 5 cantidades.', 'ReposiciÃ³n', 0),
-(0, 'Sistema', '', '', '', '2016-11-21', 'Sr. Administrador: se le comunica que el producto Lampazo Grande se encuentra en estado de reposicion, con 5 cantidades.', 'ReposiciÃ³n', 0),
-(0, 'Sistema', '', '', '', '2016-11-23', 'Sr. Administrador: se le comunica que el producto Lampazo Grande se encuentra en estado de reposicion, con 5 cantidades.', 'ReposiciÃ³n', 0),
-(0, 'Sistema', '', '', '', '2016-11-24', 'Sr. Administrador: se le comunica que el producto Lampazo Grande se encuentra en estado de reposicion, con 5 cantidades.', 'ReposiciÃ³n', 0),
-(0, 'Sistema', '', '', '', '2016-11-26', 'Sr. Administrador: se le comunica que el producto Lampazo Grande se encuentra en estado de reposicion, con 5 cantidades.', 'ReposiciÃ³n', 0),
-(0, 'Sistema', '', '', '', '2016-11-26', 'Sr. Administrador: se le comunica que el producto Lampazo Grande se encuentra en estado de reposicion, con 5 cantidades.', 'ReposiciÃ³n', 0);
 
 -- --------------------------------------------------------
 
@@ -196,11 +169,10 @@ CREATE TABLE `proveedores` (
 INSERT INTO `proveedores` (`idproveedor`, `codigo`, `nombre`, `email`, `direccion`, `telefono`, `condicion`) VALUES
 (9, 'Edem375', 'Edemsa', 'edemsaSR@hotmail.com.ar', 'Av. Mitre 343', 800, 0),
 (10, 'kat', 'Kingston', 'kignston@hotmail.com', 'Bartolome Mitre', 2147483647, 0),
-(11, 'Hog12', 'HogareÃ±o', 'hogar@gmail.com', 'Sarmiento 233', 2147483647, 1),
+(11, 'Hog12', 'Hogareño', 'hogar@gmail.com', 'Sarmiento 233', 2147483647, 1),
 (12, 'Valk1', 'Valkimia', 'valkimia@hotmail.com', 'Cordoba 112', 800, 1),
 (13, 'GAR21', 'Garbarino', 'garbarino@gmail.com', 'Av. Irigoyen', 800, 1),
-(14, 'Baz8', 'Bazarlu', 'bazarlu@hotmail.com', 'Corrientes 11', 333, 1),
-(15, '4235', 'Aasgjka', 'sdkgjjskd@gmail.com', 'Dkgjs', 0, 0);
+(14, 'Baz8', 'Bazarlu', 'bazarlu@hotmail.com', 'Corrientes 11', 333, 1);
 
 -- --------------------------------------------------------
 
@@ -228,9 +200,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`dni`, `nombre`, `apellido`, `usuario`, `email`, `password`, `telefono`, `localidad`, `imagen`, `estado`, `fecha`, `condicion`) VALUES
-(38808587, 'Mario', 'Gomez', 'mariogomez', 'mariogomez@hotmail.com', 'mario', '', '', 'user/img/ethical.jpg', 'Inactivo', '2016-10-25', 1),
-(38808595, 'Administrador', '', 'admin', 'correa97lukas@hotmail.com', 'lcdiesiseis', '', '', '', 'Activo', '0000-00-00', 0),
-(45109631, 'Enzo', 'Santamarina', 'julian9321', 'santamarina97enzo@hotmail.com', 'chupala', '2954627171', 'Algarrobo del Aguila', 'user/img/hacker.jpg', 'Activo', '2017-01-03', 0);
+(38235235, 'Lukas', 'Correa', 'lcorrea', 'correa97lukas@hotmail.com', 'lucas', '', '', 'static/img/default-user.png', 'Inactivo', '2017-06-24', 1),
+(38808595, 'Administrador', '', 'admin', 'admin123@hotmail.com', 'admin123', '', '', '', 'Activo', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -248,23 +219,6 @@ CREATE TABLE `ventas` (
   `dni_v` int(11) NOT NULL,
   `idarticulo_ven` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`idventa`, `fecha_ven`, `hora`, `total`, `cantidad`, `precio`, `dni_v`, `idarticulo_ven`) VALUES
-(19, '2016-11-07', '03:04:20', 4200, 1, 4200, 38808587, 33),
-(20, '2016-11-07', '03:04:20', 1200, 2, 600, 38808587, 35),
-(21, '2016-11-07', '03:04:20', 2600, 2, 1300, 38808587, 40),
-(23, '2016-11-07', '03:41:35', 32767, 1, 32767, 38808587, 28),
-(26, '2016-11-07', '15:45:22', 32767, 5, 8500, 38808587, 42),
-(27, '2016-11-07', '16:20:19', 8400, 2, 4200, 38808587, 33),
-(28, '2016-11-07', '19:13:18', 2600, 1, 2600, 38808587, 36),
-(29, '2016-11-07', '19:13:18', 15000, 1, 15000, 38808587, 25),
-(30, '2016-11-07', '19:13:18', 30000, 3, 10000, 38808587, 26),
-(31, '2016-11-07', '19:36:30', 4200, 1, 4200, 38808587, 33),
-(32, '2016-11-24', '20:35:06', 15000, 1, 15000, 38808587, 25);
 
 --
 -- Índices para tablas volcadas
@@ -356,7 +310,7 @@ ALTER TABLE `proveedores`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `idventa` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `idventa` smallint(6) NOT NULL AUTO_INCREMENT;
 --
 -- Restricciones para tablas volcadas
 --
@@ -386,6 +340,7 @@ ALTER TABLE `deposito`
 ALTER TABLE `ventas`
   ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`dni_v`) REFERENCES `usuarios` (`dni`),
   ADD CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`idarticulo_ven`) REFERENCES `articulos` (`idarticulo`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

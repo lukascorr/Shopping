@@ -11,7 +11,7 @@
           <div class="box-tools pull-right box-title">
 
             <? //Si esta logeado y es el administrador hacer..
-            if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { ?>
+            if (isset($_SESSION['user']) && $_SESSION['user']=='admin') { ?>
 
             <a href="index.php?id=warehouse/categories/new.php">
               <button class="btn bg-green-gradient"> <span class="fa fa-plus-circle"></span><btn class='descarto3'>  Agrega una Categoria</btn></button>
@@ -60,7 +60,7 @@
 
                  <?php } } else{ 
 
-                 if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') {?>
+                 if (isset($_SESSION['user']) && $_SESSION['user']=='admin') {?>
                   
                   <div class="alert alert-warning col-md-7 col-sm-8" role="alert" style="margin-top:20px;">
                   <span class="fa fa-exclamation-sign">

@@ -413,7 +413,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  outline: none;
+  outline: none;stroke: 
   text-decoration: none;
   color: #72afd2;
 }
@@ -444,6 +444,7 @@ a:focus {
 .main-header .navbar-right {
   float: right;
   width: 60%;
+  margin-right: -50px;
 }
 @media (max-width: 991px) {
   .main-header .navbar-custom-menu a,

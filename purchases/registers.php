@@ -1,5 +1,5 @@
 <?php //Si esta logeado y es el administrador hacer..
-   if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { 
+   if (isset($_SESSION['user']) && $_SESSION['user']=='admin') { 
   ?>
    
 <div class="content-wrapper">

@@ -3,40 +3,38 @@
      
   <section class="content">
         
-    <div class="row">
-      <div class="col-md-12 col-xs-12">
         <div class="box">
           <div class="box-header with-border">
             <h3 class="box-title">Artículos</h3>
-          <div class="box-tools pull-right box-title">
-
-          <?php if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { ?>
-
-            Proveedor:<select onchange="location = this.value"> 
-            <option></option>
-            <?php
-            $proveedores=$link->query("SELECT * FROM proveedores WHERE condicion=1");
-
-            while ($pro=mysqli_fetch_array($proveedores)){ ?>
-                    
-                    <option value="index.php?id=warehouse/articles/list.php&proveedor=<?php echo $pro['idproveedor'];?>">
-                    <?php echo $pro['nombre'];?>
-                    </option>
-            <?php } ?>
-            </select>
-            <? } ?>
-            
+          <div class="box-tools pull-right box-title">            
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>       
           </div>
         </div>
           
         <div class="box-body ">  
-          <div class="row">           
-            <div class="col-md-12 col-xs-12">
+                
+                  <?php if (isset($_SESSION['user']) && $_SESSION['user']=='admin') { ?>
+
+                    <b>Buscar por proveedor:</b><select onchange="location = this.value"> 
+                    <option></option>
+                    <?php
+                    $proveedores=$link->query("SELECT * FROM proveedores WHERE condicion=1");
+
+                    while ($pro=mysqli_fetch_array($proveedores)){ ?>
+                      
+                    <option value="index.php?id=warehouse/articles/list.php&proveedor=<?php echo $pro['idproveedor'];?>">
+                    <?php echo $pro['nombre'];?>
+                    </option>
+                    <?php } ?>
+                    </select>
+                  <?php } ?>
+
+
+
+
                 <div class="container-fluid">
-            <?php 
-      
-            if (isset($_GET['category'])){ 
+
+              <?php if (isset($_GET['category'])){ 
 
               $articles=$link->query("SELECT * FROM articulos");
         
@@ -60,7 +58,7 @@
                     <div class="cajita-descripcion"><?php echo $reg['descripcion'];?></div>
 
                     <div class="cajita-footer">
-                      <?php if (isset($_SESSION['id']) && $_SESSION['id']!='38808595') {?>
+                      <?php if (isset($_SESSION['user']) && $_SESSION['user']!='admin') {?>
 
                       <!--Agregar al carrito -->
                       <button class="btn btn-primary" style="padding: 1px 5px 0px 5px; margin-right: 15px;" type="submit" title='Agregar al carrito' name='add_to_cart'> 
@@ -83,7 +81,7 @@
                 
                  else{ 
 
-                 if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') {?>
+                 if (isset($_SESSION['user']) && $_SESSION['user']=='admin') {?>
                   
                   <div class="alert alert-warning col-md-7 col-sm-8" role="alert" style="margin-top:20px;">
                   <span class="fa fa-exclamation-sign">
@@ -148,7 +146,7 @@
                     <div class="cajita-descripcion"><?php echo $reg['descripcion'];?></div>
 
                     <div class="cajita-footer">
-                      <?php if (isset($_SESSION['id']) && $_SESSION['id']!='38808595') {?>
+                      <?php if (isset($_SESSION['user']) && $_SESSION['user']!='admin') {?>
 
                       <!--Agregar al carrito -->
                       <button class="btn btn-primary" style="padding: 1px 5px 0px 5px; margin-right: 15px;" type="submit" title='Agregar al carrito' name='add_to_cart'> 
@@ -171,7 +169,7 @@
                 
                  else{ 
 
-                 if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') {?>
+                 if (isset($_SESSION['user']) && $_SESSION['user']=='admin') {?>
                   
                   <div class="alert alert-warning col-md-7 col-sm-8" role="alert" style="margin-top:20px;">
                   <span class="fa fa-exclamation-sign">
@@ -191,9 +189,5 @@
                 </div>
               </div>
             </div>               
-  		    </div>
-       	</div>
-      </div>
-    </div>
   </section>
 </div>

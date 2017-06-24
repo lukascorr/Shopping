@@ -1,4 +1,4 @@
-<?php if (isset($_SESSION['id'])) {
+<?php if (isset($_SESSION['user'])) {
 setlocale (LC_TIME, "es_ES.UTF-8");
 $date=strftime('%Y/%m/%d');?>
 
@@ -25,7 +25,7 @@ $date=strftime('%Y/%m/%d');?>
             $info=$link->query("SELECT * FROM articulos where stock<=5"); 
 
             while ($cant=$info->fetch_array(MYSQLI_ASSOC)) {
-
+              //Si un producto se encuentra en estado de reposicion se le envia un mensaje al admin
                 $noti=$link->query("INSERT INTO notifications (nombre,fecha,mensaje,tipo,condicion) VALUES ('Sistema','$date','Sr. Administrador: se le comunica que el producto ".$cant['nombre_art']." ".$cant['descripcion']." se encuentra en estado de reposicion, con ".$cant['stock']." cantidades.','Reposición',1)");
 
             } 
@@ -37,9 +37,17 @@ $date=strftime('%Y/%m/%d');?>
 
               $articulos=$link->query("SELECT * FROM articulos INNER JOIN categorias ON articulos.idcategoria_a=categorias.idcategoria WHERE articulos.condicion=1");?>
 
-                <table class='table table-bordered table-striped'>
+                <table class='table-bordered table-striped' style="text-align: center; width: 100%;">
                     <thead>
-                      <tr><th>Artículo</th><th class='descarto3'>Descripcion</th><th class='descarto3'>Categoria</th><th>Precio</th><th class='descarto3'>Stock</th><th>Cantidad</th><th>Acciones</th></tr>
+                      <tr>
+                        <th>Artículo</th>
+                        <th class='descarto3'>Descripcion</th>
+                        <th class='descarto3'>Categoria</th>
+                        <th>Precio</th>
+                        <th class='descarto3'>Stock</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                      </tr>
                     </thead>
                     <tbody>
                     <?php
@@ -48,13 +56,14 @@ $date=strftime('%Y/%m/%d');?>
                       <form action='index.php?id=sales/cart.php&articulo=<?php echo $write["idarticulo"]; ?>' method='POST'>
 
                       <?php echo "<tr><td>".$write['nombre_art']."</td>
-                <td class='descarto3'>".$write['descripcion']."</td>
+                        <td class='descarto3'>".$write['descripcion']."</td>
                         <td class='descarto3'>".$write['tipo']."</td>
                         <td>$".$write['precio_art']."</td>
                         <td class='descarto3'>".$write['stock']?></td>
-                        <td style='width:17%;'><input type='number' class='form-control' name='cantidad' id='cantidad' autocomplete='off' min='0' max="<?php echo $write['stock'];?>"></td>
 
-                          <td style='width:5%;'><button class='btn bg-green-gradient pull-right' type='submit' title='Agregar al carrito' name='add_to_cart'><span class='fa fa-shopping-cart'></span></button></td></tr>
+                        <td style='width:17%;'><input type='number' class='form-control' name='cantidad' required id='cantidad' autocomplete='off' min='0' max="<?php echo $write['stock'];?>"></td>
+
+                          <td><button class='btn bg-green-gradient' type='submit' title='Agregar al carrito' name='add_to_cart'><i class='fa fa-shopping-cart'></i></button></td></tr>
 
                           <input type='hidden' name='nombre' value='<?php echo $write["nombre_art"]; ?>'>
                           <input type='hidden' name='descripcion' value='<?php echo $write["descripcion"];?>'>
@@ -68,8 +77,8 @@ $date=strftime('%Y/%m/%d');?>
                   <?php } else{ ?>
 
                  <div class="alert alert-info col-md-7 col-sm-10" role="alert" style="margin-top:20px;">
-                  <span class="fa fa-exclamation-sign">
-                  </span><strong> Disculpe!</strong> Por el momento, no disponemos de stock.
+                  <i class="fa fa-exclamation-sign">
+                  </i><strong> Disculpe!</strong> Por el momento, no disponemos de stock.
                 </div>
                 <?php } ?>            
  

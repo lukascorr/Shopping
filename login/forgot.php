@@ -4,7 +4,7 @@ include '../static/db/conection.php';
 
 $registros=mysqli_query($link,"select * from usuarios where email='$_POST[email]'");?>
 
-<div class="col-md-5 col-md-offset-3 col-sm-7 col-sm-offset-3" style="margin-top:20px;">
+<div class="col-md-5 col-sm-7" style="margin-top:10%;left: 30%;">
   <div class="register-box-body" >
     <p class="register-box-msg" style="font-weight: bolder;">
     Restablece tu contraseña</p>
@@ -18,7 +18,7 @@ $registros=mysqli_query($link,"select * from usuarios where email='$_POST[email]
         <?php echo '@'.$reg['usuario'];?>
     </div>
     
-    <span class="glyphicon glyphicon-envelope"></span>  
+    <i class="fa fa-envelope"></i>  
     Te enviaremos un correo para restablecer tu contraseña.<br><br>
 
     <div class="form-group has-feedback">
@@ -37,17 +37,17 @@ $registros=mysqli_query($link,"select * from usuarios where email='$_POST[email]
     <?  } else {  ?>
     
     <!--- Si no encontro usuario hacer.. -->
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" style="color: white;">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       <strong>No hay resultados de búsqueda</strong><br>
       Tu búsqueda no arrojó ningún resultado. Vuelve a intentarlo con otros datos.
     </div>
 
-    <form action="index.php?id=forget.php" method="POST">
+    <form action="index.php?id=forgot.php" method="POST">
 
       <div class="form-group has-feedback">
         <input type="email" class="form-control" name="email" placeholder="Vuelve a introducir tu email" required>
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <i class="fa fa-envelope form-control-feedback"></i>
       </div>
 
       <button style="width: 30%;border-radius: 3px;" type="submit" class="btn btn-primary btn-block btn-flat">Buscar</button>

@@ -1,5 +1,5 @@
 <?php //Si esta logeado y es el administrador hacer..
-   if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { ?>
+   if (isset($_SESSION['user']) && $_SESSION['user']=='admin') { ?>
 
 <div class="content-wrapper">
      
@@ -49,7 +49,7 @@
         
 
                     if($haynotific!=''){?>
-
+                      <div class='list-group menu-notificaciones'>
                 <table class='table table-striped rwd_auto'>
                   <thead>
                     <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th class='descarto3 descarto2'>Email</th><th class='descarto3'>Tipo</th><th>Acciones</th></tr>
@@ -74,8 +74,8 @@
 
                   </tbody>
                 </table>
-
-                <ul class="nav nav-tabs">
+</div>
+                <ul class="nav nav-tabs" style="margin-top:-40px;">
                   <li role="presentation" class="active"><a href="#">Mensaje</a>
                   </li>
                 </ul>

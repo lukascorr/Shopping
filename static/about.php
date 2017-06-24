@@ -17,10 +17,9 @@
            	<div class="row">
 	           	<div class="col-md-12">
       
-                <div style="text-align: center;">
-                  <img class="img-circle" src="static/img/about.jpg" width="140" height="140">
-                  <h2>Lucas Correa</h2>
-                  <span class="fa fa-briefcase"></span> Analista y Programador de Sistemas<br>
+                <div style="text-align: center;padding: 7%;">
+                  <img src="static/img/logo.png"><br>
+                  <span class="fa fa-briefcase"></span>  Empresa especializada en la implementación de software para soluciones tecnológicas.<br>
 
                   <span class="fa fa-map-marker"></span> San Rafael (Mendoza-Argentina).
                   

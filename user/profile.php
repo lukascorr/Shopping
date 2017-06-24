@@ -1,5 +1,5 @@
 <!-- Si no esta logeado NO MOSTRAR! -->
-<?php if (empty($_SESSION['id'])){
+<?php if (empty($_SESSION['user'])){
 echo '<meta http-equiv="refresh" content="0; url=./">'; } ?>
 
 <div class="content-wrapper">
@@ -15,7 +15,7 @@ echo '<meta http-equiv="refresh" content="0; url=./">'; } ?>
             <div class="box-tools pull-right box-title">
 
               <?php //Si esta logeado y es el administrador hacer..
-                  if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { 
+                  if (isset($_SESSION['user']) && $_SESSION['user']=='admin') { 
 
                     $usuarios=mysqli_query($link,"SELECT * FROM usuarios where dni='$_GET[dni]'");
 
@@ -29,7 +29,7 @@ echo '<meta http-equiv="refresh" content="0; url=./">'; } ?>
                     </button>
                   </a>
               <?php  } //Si esta logeado y es un usuario hacer..
-                      if (isset($_SESSION['id']) && $_SESSION['id']!='38808595') { ?>
+                      if (isset($_SESSION['user']) && $_SESSION['user']!='admin') { ?>
                 
                 <a href="user/settings.php">
                   <button class="btn btn-default"> <span class="fa fa-cog"></span> Editar</button>
@@ -52,7 +52,7 @@ echo '<meta http-equiv="refresh" content="0; url=./">'; } ?>
                 </div><br><br>
               </div>
 
-              <div class="col-md-7 col-sm-7 col-md-offset-1">
+              <div class="col-md-7 col-sm-7 col-md-offset-1" style="padding: 2%;">
 
                 <table class="table table-hover">
                   <tr><td><strong>Nombre:</strong></td><td><?php echo $reg['nombre'];?></td></tr>
@@ -63,7 +63,7 @@ echo '<meta http-equiv="refresh" content="0; url=./">'; } ?>
                   <tr><td><strong>Teléfono:</strong></td><td><?php if ($reg['telefono']==""){echo "-";}else { echo $reg['telefono'];}?></td></tr>
                   <?php 
 
-                  if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { ?>
+                  if (isset($_SESSION['user']) && $_SESSION['user']=='admin') { ?>
                   <tr><td><strong>Registrado:</strong></td><td><?php echo $reg['fecha'];?></td></tr>
 
                   <tr><td><strong>Ventas concretadas:</strong></td>

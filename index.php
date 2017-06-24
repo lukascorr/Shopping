@@ -34,19 +34,17 @@ include 'static/db/conection.php';
 //-------------------------------------------------------------
       
       //Si esta logeado y es el administrador hacer..
-      if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') {
+      if (isset($_SESSION['user']) && $_SESSION['user']=='admin') {
 
       //si su session expiro (30 min) hacer ...
       $now = time();
             
       if($now > $_SESSION['expire']) {
 
-      $sql =$link->query("UPDATE usuarios SET estado='Inactivo' where dni=$_SESSION[id]");
-
       session_destroy();
       header('location: login'); }
 
-      $registros=$link->query("SELECT * FROM usuarios WHERE dni=$_SESSION[id]");
+      $registros=$link->query("SELECT * FROM usuarios WHERE usuario='$_SESSION[user]'");
 
       $reg=$registros->fetch_array(MYSQLI_ASSOC);
 
@@ -57,19 +55,19 @@ include 'static/db/conection.php';
 //-------------------------------------------------------------
 
       //Si esta logeado y es un usuario hacer..
-      elseif (isset($_SESSION['id']) && $_SESSION['id']!='38808595') {
+      elseif (isset($_SESSION['user']) && $_SESSION['user']!='admin') {
 
       //si su session expiro (30 min) hacer ...
       $now = time();
             
       if($now > $_SESSION['expire']) {
 
-      $sql =$link->query("UPDATE usuarios SET estado='Inactivo' where dni=$_SESSION[id]");
+      $sql =$link->query("UPDATE usuarios SET estado='Inactivo' where usuario='$_SESSION[user]'");
 
       session_destroy();
       header('location: login');  }
 
-      $registros=$link->query("SELECT * FROM usuarios WHERE dni=$_SESSION[id]");
+      $registros=$link->query("SELECT * FROM usuarios WHERE usuario='$_SESSION[user]'");
 
       $reg=$registros->fetch_array(MYSQLI_ASSOC);
 

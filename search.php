@@ -45,7 +45,7 @@
                     <div class="cajita-descripcion"><?php echo $reg['descripcion'];?></div>
 
                     <div class="cajita-footer">
-                      <?php if (isset($_SESSION['id']) && $_SESSION['id']!='38808595') {?>
+                      <?php if (isset($_SESSION['user']) && $_SESSION['user']!='admin') {?>
 
                       <!--Agregar al carrito -->
                       <button class="btn btn-primary" style="padding: 1px 5px 0px 5px; margin-right: 15px;" type="submit" title='Agregar al carrito' name='add_to_cart'> 

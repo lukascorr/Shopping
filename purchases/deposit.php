@@ -1,14 +1,11 @@
 <?php //Si esta logeado y es el administrador hacer..
-   if (isset($_SESSION['id']) && $_SESSION['id']=='38808595') { 
+   if (isset($_SESSION['user']) && $_SESSION['user']=='admin') { 
 
 ?>
    
 <div class="content-wrapper">
      
   <section class="content">
-        
-    <div class="row">
-      <div class="col-md-12 col-xs-12">
         <div class="box">
           <div class="box-header with-border">
             <h3 class="box-title">Depósito 
@@ -31,14 +28,12 @@
           
 
           <div class="box-body ">             
-            <div class="row">
-              <div class="col-md-12 col-xs-12">
 
                 <?php if (isset($_GET['successful'])) {
 
                 echo '<div class="alert alert-info" style="width:70%; padding-top: 0px; padding-bottom: 0px;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><h5>
-                <span class="fa fa-ok"></span>
+                <i class="fa fa-check-circle"></i>
                   El artículo se agregó al stock.</h5>
                </div>';
               }  
@@ -66,7 +61,7 @@
                           <td class='descarto3'><?php echo $write['nombre'];?>
 
                           <td><a href='index.php?id=warehouse/articles/new.php&codigo=<? echo $write['codigo_p'];?>' title='Agregar al stock'><button class='btn btn-success' type='button'>
-                          <span class='fa fa-log-in'></span></button></a>
+                          <i class='fa fa-check'></i></button></a>
 
                           </td></tr>
                          <?php }?>
@@ -77,17 +72,13 @@
                 <?php } else{ ?>
 
                 <div class="alert bg-light-blue-gradient col-md-6 col-sm-7" role="alert" style="margin-top:20px;">
-                  <span class="fa fa-exclamation-sign">
-                  </span><strong> El depósito se encuentra vacío.</strong>  
+                  <i class="fa fa-exclamation-sign">
+                  </i><strong> El depósito se encuentra vacío.</strong>  
                 </div>
                 <?php } ?>
 
               </div>
             </div>               
-  		    </div>
-       	</div>
-      </div>
-    </div>
   </section>
 </div>
 

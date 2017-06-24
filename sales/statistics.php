@@ -1,4 +1,4 @@
-<?php if (isset($_SESSION['id'])) {
+<?php if (isset($_SESSION['user'])) {
 
 $mes=$link->query("SELECT fecha FROM ");?>
 
